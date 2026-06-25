@@ -1,14 +1,7 @@
 # VELLORA - Luxury Function Halls
 
-<div align="center">
-  <a href="#">
-    <img src="https://img.shields.io/badge/🔴_LIVE_DEMO-Click_Here-FF0055?style=for-the-badge" alt="Live Demo" />
-  </a>
-  <br/>
-  <p><strong>Live Link:</strong> <a href="#">https://your-domain.com</a></p>
-  <br/>
-  <img src="https://skillicons.dev/icons?i=react,vite,tailwind,js,html,css&theme=dark" alt="Tech Stack Icons" />
-</div>
+[![Live Demo](https://img.shields.io/badge/🔴_LIVE_DEMO-Click_Here-FF0055?style=for-the-badge)](https://vellora-luxury-function-halls.vercel.app/)
+<br/>**Live Link:** [https://vellora-luxury-function-halls.vercel.app/](https://vellora-luxury-function-halls.vercel.app/)
 
 ## Project Description
 
@@ -25,6 +18,9 @@ It was engineered from the ground up to demonstrate modern web development pract
 - **Mobile-First Design**: Designed natively for mobile screens first, ensuring optimal touch interactions, accessible navigation, and high performance on all devices.
 
 ## Tech Stack
+
+<img src="https://skillicons.dev/icons?i=react,vite,tailwind,js,html,css&theme=dark" alt="Tech Stack Icons" />
+<br/><br/>
 
 | Classification | Technology | Implementation Details |
 | :--- | :--- | :--- |
