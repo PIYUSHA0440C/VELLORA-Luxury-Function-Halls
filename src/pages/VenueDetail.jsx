@@ -30,14 +30,14 @@ const VenueDetail = () => {
         </div>
 
         <div className="mb-12">
-          <AnimatedText text={venue.name} className="font-serif text-5xl md:text-8xl leading-[0.9]" />
+          <AnimatedText text={venue.name} className="font-serif text-5xl md:text-6xl lg:text-8xl leading-[0.9]" />
         </div>
 
         <motion.div
           initial={{ clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)' }}
           animate={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)' }}
           transition={{ duration: 1.5, delay: 0.2, ease: premiumEase }}
-          className="aspect-[21/9] overflow-hidden mb-24"
+          className="aspect-[4/3] md:aspect-[16/9] lg:aspect-[21/9] overflow-hidden mb-16 md:mb-24"
         >
           <motion.img
             initial={{ scale: 1.1 }}
@@ -82,7 +82,7 @@ const VenueDetail = () => {
             transition={{ duration: 1, delay: 0.2, ease: premiumEase }}
             className="lg:col-span-8"
           >
-            <p className="font-serif text-3xl md:text-5xl leading-tight mb-8">
+            <p className="font-serif text-2xl md:text-4xl lg:text-5xl leading-tight mb-8">
               {venue.tagline}
             </p>
             <p className="text-lg text-[var(--color-bespoke-text-muted)] leading-relaxed mb-12 max-w-2xl">

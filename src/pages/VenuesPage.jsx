@@ -11,22 +11,22 @@ const VenuesPage = () => {
 
   return (
     <PageTransition>
-      <div className="pt-40 pb-24 px-6 md:px-12 max-w-7xl 2xl:max-w-[2000px] mx-auto">
+      <div className="pt-[15vh] pb-[10vh] px-6 md:px-12 max-w-7xl 2xl:max-w-[2000px] mx-auto">
 
-        <div className="mb-24">
-          <AnimatedText text="Our" className="font-serif text-5xl md:text-8xl" />
-          <AnimatedText delay={0.2} text="Venues" className="font-serif text-5xl md:text-8xl italic text-[var(--color-bespoke-accent)]" />
+        <div className="mb-16 md:mb-24">
+          <AnimatedText text="Our" className="font-serif text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl" />
+          <AnimatedText delay={0.2} text="Venues" className="font-serif text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl italic text-[var(--color-bespoke-accent)]" />
         </div>
 
-        <div className="flex flex-col gap-32">
+        <div className="flex flex-col gap-24 lg:gap-32">
           {venues.map((venue, i) => (
-            <div key={venue.id} className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center group">
+            <div key={venue.id} className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center group">
 
               <div className={`lg:col-span-7 ${i % 2 !== 0 ? 'lg:order-2' : ''}`}>
-                <Link to={`/venues/${venue.id}`} className="block overflow-hidden aspect-[16/10]">
+                <Link to={`/venues/${venue.id}`} className="block overflow-hidden aspect-[16/10] max-h-[60vh] group">
                   <motion.div
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, y: 40, filter: 'blur(10px)' }}
+                    whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                     viewport={{ once: true, margin: "-10px" }}
                     transition={{ duration: 1, ease: premiumEase }}
                     className="w-full h-full"
@@ -38,7 +38,7 @@ const VenuesPage = () => {
                       transition={{ duration: 2, ease: premiumEase }}
                       src={venue.heroImage}
                       alt={venue.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-all duration-[2s]"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[3s] ease-out"
                     />
                   </motion.div>
                 </Link>
@@ -51,9 +51,9 @@ const VenuesPage = () => {
                   viewport={{ once: false, margin: "-10px" }}
                   transition={{ duration: 1, ease: premiumEase }}
                 >
-                  <h2 className="font-serif text-4xl md:text-5xl mb-4">{venue.name}</h2>
-                  <p className="text-[var(--color-bespoke-text-muted)] text-lg mb-8 italic">{venue.tagline}</p>
-                  <div className="flex gap-8 mb-10 text-sm tracking-wider uppercase text-[var(--color-bespoke-text-muted)]">
+                  <h2 className="font-serif text-3xl md:text-4xl 2xl:text-5xl mb-4">{venue.name}</h2>
+                  <p className="text-[var(--color-bespoke-text-muted)] text-base md:text-lg mb-8 italic">{venue.tagline}</p>
+                  <div className="flex gap-8 mb-10 text-xs md:text-sm tracking-wider uppercase text-[var(--color-bespoke-text-muted)]">
                     <div>
                       <span className="block text-xs mb-1">Capacity</span>
                       <span className="text-[var(--color-bespoke-text)]">{venue.capacity.standing} Guests</span>

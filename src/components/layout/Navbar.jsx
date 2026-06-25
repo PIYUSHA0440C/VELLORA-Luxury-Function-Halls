@@ -17,8 +17,9 @@ const Navbar = () => {
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-        className="fixed top-0 w-full z-50 mix-blend-difference text-white py-4 px-6 md:py-6 md:px-12 flex justify-between items-center pointer-events-none backdrop-blur-md bg-white/5 md:backdrop-blur-none md:bg-transparent"
+        className="fixed top-0 w-full z-50 mix-blend-difference text-white pointer-events-none backdrop-blur-md bg-white/5 md:backdrop-blur-none md:bg-transparent"
       >
+        <div className="max-w-7xl 2xl:max-w-[2000px] mx-auto w-full py-4 px-6 md:py-6 md:px-12 flex justify-between items-center">
         <Magnetic>
           <Link
             to="/"
@@ -37,7 +38,8 @@ const Navbar = () => {
           >
             Menu
           </button>
-        </Magnetic>
+          </Magnetic>
+        </div>
       </motion.header>
 
       <AnimatePresence>
@@ -70,7 +72,7 @@ const Navbar = () => {
                     >
                       <Link
                         to={path}
-                        className="font-serif text-5xl md:text-8xl hover:text-[var(--color-bespoke-accent)] transition-colors duration-500"
+                        className="font-serif text-4xl sm:text-5xl lg:text-7xl 2xl:text-8xl hover:text-[var(--color-bespoke-accent)] transition-colors duration-500"
                       >
                         {item}
                       </Link>
@@ -84,15 +86,15 @@ const Navbar = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 1 }}
-              className="mt-16 md:mt-24 flex flex-col md:flex-row gap-8 md:gap-24 text-sm tracking-widest uppercase text-[var(--color-bespoke-text-muted)]"
+              className="mt-10 md:mt-16 lg:mt-24 flex flex-col md:flex-row gap-6 md:gap-16 lg:gap-24 text-xs md:text-sm tracking-widest uppercase text-[var(--color-bespoke-text-muted)]"
             >
               <div>
-                <p>555 Heritage Avenue</p>
-                <p>Civil Lines, Vidisha 464001</p>
+                <p>555 DN Square</p>
+                <p>Civil Lines, Vidisha, M.P., India, 464001</p>
               </div>
               <div>
-                <a href="mailto:hello@velloravenues.in" className="block hover:text-[var(--color-bespoke-text)]">hello@velloravenues.in</a>
-                <a href="tel:+919876543210" className="block hover:text-[var(--color-bespoke-text)]">+91 98765 43210</a>
+                <a href="mailto:example@velloravenues.in" className="block hover:text-[var(--color-bespoke-text)]">example@velloravenues.in</a>
+                <a href="tel:+919876543210" className="block hover:text-[var(--color-bespoke-text)]">+91 9876543210</a>
               </div>
             </motion.div>
           </motion.div>

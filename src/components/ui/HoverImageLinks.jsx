@@ -53,19 +53,38 @@ const LinkItem = ({ item }) => {
       onMouseLeave={() => setHovered(false)}
       className="relative flex flex-col md:flex-row justify-between md:items-center py-10 md:py-16 border-b border-[var(--color-bespoke-text)]/20 group cursor-pointer"
     >
-      {/* Mobile Static Image Reveal (Visible only on touch devices) */}
-      <div className="md:hidden w-full aspect-[21/9] mb-6 overflow-hidden z-10 pointer-events-none">
-        <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
-      </div>
+      {/* Mobile Animated Image Reveal (Visible only on touch devices) */}
+      <motion.div 
+        initial={{ clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)' }}
+        whileInView={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)' }}
+        viewport={{ once: false, margin: "-10px" }}
+        transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
+        className="md:hidden w-full aspect-[21/9] mb-6 overflow-hidden z-10 pointer-events-none"
+      >
+        <motion.img 
+          initial={{ scale: 1.2, filter: 'blur(10px)' }}
+          whileInView={{ scale: 1, filter: 'blur(0px)' }}
+          transition={{ duration: 2, ease: [0.22, 1, 0.36, 1] }}
+          src={item.image} 
+          alt={item.title} 
+          className="w-full h-full object-cover" 
+        />
+      </motion.div>
 
-      <div className="flex flex-col z-20 pointer-events-none relative mix-blend-difference text-white w-full md:w-auto">
+      <motion.div 
+        initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
+        whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+        viewport={{ once: false, margin: "-10px" }}
+        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+        className="flex flex-col z-20 pointer-events-none relative mix-blend-difference text-white w-full md:w-auto"
+      >
         <h3 className="font-serif text-4xl md:text-5xl lg:text-7xl group-hover:italic md:group-hover:translate-x-8 transition-transform duration-500 ease-out">
           {item.title}
         </h3>
         <span className="text-xs md:text-sm tracking-widest uppercase opacity-70 mt-2 md:group-hover:translate-x-8 transition-transform duration-500 ease-out block">
           {item.subtitle}
         </span>
-      </div>
+      </motion.div>
 
       <div className="hidden md:block z-20 text-xl pointer-events-none transition-all duration-500 group-hover:-rotate-45 group-hover:opacity-0 mix-blend-difference text-white">
         &rarr;

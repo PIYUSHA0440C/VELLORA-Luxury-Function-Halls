@@ -14,9 +14,16 @@
 }
 
 @layer base {
-  html {
+  html, body {
+    margin: 0;
+    padding: 0;
     background-color: var(--color-bespoke-bg);
     color: var(--color-bespoke-text);
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+  
+  body {
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     

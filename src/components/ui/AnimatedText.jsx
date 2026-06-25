@@ -17,6 +17,7 @@ const AnimatedText = ({ text, className, delay = 0 }) => {
       opacity: 1,
       y: 0,
       rotate: 0,
+      filter: 'blur(0px)',
       transition: {
         type: 'spring',
         damping: 20,
@@ -27,6 +28,7 @@ const AnimatedText = ({ text, className, delay = 0 }) => {
       opacity: 0,
       y: 40,
       rotate: 5,
+      filter: 'blur(10px)',
       transition: {
         type: 'spring',
         damping: 20,

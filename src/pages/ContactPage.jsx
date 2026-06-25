@@ -33,8 +33,8 @@ const ContactPage = () => {
 
   return (
     <PageTransition>
-      <div className="pt-40 pb-24 px-6 md:px-12 max-w-4xl mx-auto min-h-screen">
-        <div className="mb-16 text-center">
+      <div className="pt-[15vh] md:pt-[20vh] pb-[10vh] px-6 md:px-12 max-w-4xl mx-auto min-h-[100svh] 2xl:min-h-[800px]">
+        <div className="mb-12 md:mb-16 text-center">
           <AnimatedText
             text="Begin your"
             className="font-serif text-5xl md:text-7xl mb-4"

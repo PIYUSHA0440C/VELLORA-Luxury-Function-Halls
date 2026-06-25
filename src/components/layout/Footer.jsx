@@ -6,8 +6,8 @@ const Footer = () => {
   const premiumEase = [0.22, 1, 0.36, 1];
 
   return (
-    <footer className="bg-[var(--color-bespoke-text)] text-[var(--color-bespoke-bg)] py-24 px-6 md:px-12 mt-32 overflow-hidden">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-end gap-16">
+    <footer className="bg-[var(--color-bespoke-text)] text-[var(--color-bespoke-bg)] py-[8vh] lg:py-[10vh] px-6 md:px-12 mt-[10vh] overflow-hidden">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-start lg:items-end gap-12 lg:gap-16">
 
         <div className="max-w-md">
           <motion.h2
@@ -15,7 +15,7 @@ const Footer = () => {
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: false, margin: "-10px" }}
             transition={{ duration: 1, ease: premiumEase }}
-            className="font-serif text-5xl md:text-7xl mb-8"
+            className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6 lg:mb-8"
           >
             Ready to curate your event?
           </motion.h2>
@@ -57,10 +57,10 @@ const Footer = () => {
         whileInView={{ opacity: 1 }}
         viewport={{ once: false, margin: "-10px" }}
         transition={{ duration: 1 }}
-        className="max-w-7xl mx-auto mt-32 pt-8 border-t border-[var(--color-bespoke-bg)]/20 text-xs tracking-widest uppercase text-[var(--color-bespoke-bg)]/40 flex justify-between"
+        className="max-w-7xl mx-auto mt-[8vh] lg:mt-[10vh] pt-6 lg:pt-8 border-t border-[var(--color-bespoke-bg)]/20 text-[10px] md:text-xs tracking-widest uppercase text-[var(--color-bespoke-bg)]/40 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0"
       >
-        <p>Vellora Venues &copy; {new Date().getFullYear()}</p>
-        <p>Site by Architectural Design</p>
+        <p className="text-center md:text-left">Vellora Venues &copy; {new Date().getFullYear()}</p>
+        <p className="text-center md:text-right">Site by - Piyush Shrivastav</p>
       </motion.div>
     </footer>
   );
