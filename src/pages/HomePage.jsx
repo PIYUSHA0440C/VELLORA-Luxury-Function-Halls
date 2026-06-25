@@ -136,9 +136,11 @@ const HomePage = () => {
                 <button
                   key={i}
                   onClick={() => setActiveTab(i)}
-                  className={`text-left transition-all duration-500 cursor-pointer ${activeTab === i ? 'opacity-100 pl-4 border-l border-[var(--color-bespoke-text)] -ml-[33px]' : 'opacity-40 hover:opacity-70'}`}
+                  className={`text-left transition-all duration-500 cursor-pointer group ${activeTab === i ? 'opacity-100 pl-4 border-l border-[var(--color-bespoke-text)] -ml-[33px]' : 'opacity-40 hover:opacity-100'}`}
                 >
-                  <h3 className="font-serif text-3xl mb-4">{tab.title}</h3>
+                  <h3 className={`font-serif text-3xl mb-4 transition-transform duration-500 ease-out origin-left ${activeTab !== i ? 'group-hover:translate-x-4 group-hover:-skew-x-6' : ''}`}>
+                    {tab.title}
+                  </h3>
                   <AnimatePresence>
                     {activeTab === i && (
                       <motion.p 

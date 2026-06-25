@@ -20,6 +20,21 @@ const LinkItem = ({ item }) => {
   const x = useSpring(0, springConfig);
   const y = useSpring(0, springConfig);
 
+  const handleMouseEnter = (e) => {
+    setHovered(true);
+    if (!ref.current) return;
+    const rect = ref.current.getBoundingClientRect();
+    const offsetX = e.clientX - rect.left;
+    const offsetY = e.clientY - rect.top;
+    
+    // Instantly snap to the cursor entry point, bypassing the spring animation
+    if (x.jump) x.jump(offsetX);
+    else x.set(offsetX);
+    
+    if (y.jump) y.jump(offsetY);
+    else y.set(offsetY);
+  };
+
   const handleMouseMove = (e) => {
     if (!ref.current) return;
     const rect = ref.current.getBoundingClientRect();
@@ -34,7 +49,7 @@ const LinkItem = ({ item }) => {
       to={item.href}
       ref={ref}
       onMouseMove={handleMouseMove}
-      onMouseEnter={() => setHovered(true)}
+      onMouseEnter={handleMouseEnter}
       onMouseLeave={() => setHovered(false)}
       className="relative flex flex-col md:flex-row justify-between md:items-center py-10 md:py-16 border-b border-[var(--color-bespoke-text)]/20 group cursor-pointer"
     >
