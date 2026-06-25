@@ -35,12 +35,12 @@ const ContactPage = () => {
     <PageTransition>
       <div className="pt-40 pb-24 px-6 md:px-12 max-w-4xl mx-auto min-h-screen">
         <div className="mb-16 text-center">
-          <AnimatedText 
-            text="Begin your" 
+          <AnimatedText
+            text="Begin your"
             className="font-serif text-5xl md:text-7xl mb-4"
           />
-          <AnimatedText 
-            text="Inquiry." 
+          <AnimatedText
+            text="Inquiry."
             delay={0.2}
             className="font-serif text-5xl md:text-7xl italic text-[var(--color-bespoke-accent)]"
           />
@@ -54,7 +54,7 @@ const ContactPage = () => {
 
         <form onSubmit={handleSubmit} className="relative overflow-hidden min-h-[400px]">
           <AnimatePresence mode="wait">
-            
+
             {step === 1 && (
               <motion.div
                 key="step1"
@@ -64,13 +64,13 @@ const ContactPage = () => {
                 className="space-y-8"
               >
                 <h2 className="font-serif text-3xl mb-8">1. The Details</h2>
-                
+
                 <div className="space-y-6">
                   <div>
                     <label className="block text-xs tracking-widest uppercase text-[var(--color-bespoke-text-muted)] mb-3">Preferred Venue</label>
-                    <select 
-                      name="venue" 
-                      value={formData.venue} 
+                    <select
+                      name="venue"
+                      value={formData.venue}
                       onChange={handleChange}
                       className="w-full bg-transparent border-b border-[var(--color-bespoke-border)] pb-3 text-lg focus:outline-none focus:border-[var(--color-bespoke-text)] transition-colors"
                       required
@@ -80,14 +80,14 @@ const ContactPage = () => {
                       <option value="Undecided">Undecided</option>
                     </select>
                   </div>
-                  
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
                       <label className="block text-xs tracking-widest uppercase text-[var(--color-bespoke-text-muted)] mb-3">Estimated Date</label>
-                      <input 
-                        type="date" 
-                        name="date" 
-                        value={formData.date} 
+                      <input
+                        type="date"
+                        name="date"
+                        value={formData.date}
                         onChange={handleChange}
                         className="w-full bg-transparent border-b border-[var(--color-bespoke-border)] pb-3 text-lg focus:outline-none focus:border-[var(--color-bespoke-text)] transition-colors"
                         required
@@ -95,11 +95,11 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <label className="block text-xs tracking-widest uppercase text-[var(--color-bespoke-text-muted)] mb-3">Guest Count</label>
-                      <input 
-                        type="number" 
-                        name="guests" 
+                      <input
+                        type="number"
+                        name="guests"
                         placeholder="e.g. 150"
-                        value={formData.guests} 
+                        value={formData.guests}
                         onChange={handleChange}
                         className="w-full bg-transparent border-b border-[var(--color-bespoke-border)] pb-3 text-lg focus:outline-none focus:border-[var(--color-bespoke-text)] transition-colors"
                         required
@@ -125,13 +125,13 @@ const ContactPage = () => {
                 className="space-y-8"
               >
                 <h2 className="font-serif text-3xl mb-8">2. The Vision</h2>
-                
+
                 <div className="space-y-6">
                   <div>
                     <label className="block text-xs tracking-widest uppercase text-[var(--color-bespoke-text-muted)] mb-3">Event Type</label>
-                    <select 
-                      name="eventType" 
-                      value={formData.eventType} 
+                    <select
+                      name="eventType"
+                      value={formData.eventType}
                       onChange={handleChange}
                       className="w-full bg-transparent border-b border-[var(--color-bespoke-border)] pb-3 text-lg focus:outline-none focus:border-[var(--color-bespoke-text)] transition-colors"
                       required
@@ -143,14 +143,14 @@ const ContactPage = () => {
                       <option value="Other">Other</option>
                     </select>
                   </div>
-                  
+
                   <div>
                     <label className="block text-xs tracking-widest uppercase text-[var(--color-bespoke-text-muted)] mb-3">Additional Notes & Vision</label>
-                    <textarea 
-                      name="notes" 
+                    <textarea
+                      name="notes"
                       rows={4}
                       placeholder="Tell us about your dream event..."
-                      value={formData.notes} 
+                      value={formData.notes}
                       onChange={handleChange}
                       className="w-full bg-transparent border-b border-[var(--color-bespoke-border)] pb-3 text-lg focus:outline-none focus:border-[var(--color-bespoke-text)] transition-colors resize-none"
                     />
@@ -177,15 +177,15 @@ const ContactPage = () => {
                 className="space-y-8"
               >
                 <h2 className="font-serif text-3xl mb-8">3. Contact Information</h2>
-                
+
                 <div className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
                       <label className="block text-xs tracking-widest uppercase text-[var(--color-bespoke-text-muted)] mb-3">First Name</label>
-                      <input 
-                        type="text" 
-                        name="firstName" 
-                        value={formData.firstName} 
+                      <input
+                        type="text"
+                        name="firstName"
+                        value={formData.firstName}
                         onChange={handleChange}
                         className="w-full bg-transparent border-b border-[var(--color-bespoke-border)] pb-3 text-lg focus:outline-none focus:border-[var(--color-bespoke-text)] transition-colors"
                         required
@@ -193,23 +193,23 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <label className="block text-xs tracking-widest uppercase text-[var(--color-bespoke-text-muted)] mb-3">Last Name</label>
-                      <input 
-                        type="text" 
-                        name="lastName" 
-                        value={formData.lastName} 
+                      <input
+                        type="text"
+                        name="lastName"
+                        value={formData.lastName}
                         onChange={handleChange}
                         className="w-full bg-transparent border-b border-[var(--color-bespoke-border)] pb-3 text-lg focus:outline-none focus:border-[var(--color-bespoke-text)] transition-colors"
                         required
                       />
                     </div>
                   </div>
-                  
+
                   <div>
                     <label className="block text-xs tracking-widest uppercase text-[var(--color-bespoke-text-muted)] mb-3">Email Address</label>
-                    <input 
-                      type="email" 
-                      name="email" 
-                      value={formData.email} 
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
                       onChange={handleChange}
                       className="w-full bg-transparent border-b border-[var(--color-bespoke-border)] pb-3 text-lg focus:outline-none focus:border-[var(--color-bespoke-text)] transition-colors"
                       required

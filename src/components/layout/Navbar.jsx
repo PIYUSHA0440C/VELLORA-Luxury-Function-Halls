@@ -13,21 +13,25 @@ const Navbar = () => {
 
   return (
     <>
-      <motion.header 
+      <motion.header
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
         className="fixed top-0 w-full z-50 mix-blend-difference text-white p-6 md:p-10 flex justify-between items-center pointer-events-none backdrop-blur-md bg-white/5 md:backdrop-blur-none md:bg-transparent"
       >
         <Magnetic>
-          <Link to="/" className="pointer-events-auto block p-4 -m-4 group">
+          <Link
+            to="/"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="pointer-events-auto block p-4 -m-4 group"
+          >
             <span className="font-serif text-2xl md:text-3xl tracking-wide block">VELLORA</span>
             <span className="text-[0.6rem] tracking-[0.3em] uppercase opacity-70 transition-opacity block mt-1">Luxury Function Halls</span>
           </Link>
         </Magnetic>
-        
+
         <Magnetic>
-          <button 
+          <button
             onClick={() => setIsOpen(true)}
             className="text-sm tracking-[0.2em] uppercase font-sans pointer-events-auto hover:italic transition-all duration-300 cursor-pointer block p-4 -m-4"
           >
@@ -38,7 +42,7 @@ const Navbar = () => {
 
       <AnimatePresence>
         {isOpen && (
-          <motion.div 
+          <motion.div
             initial={{ y: '-100%' }}
             animate={{ y: 0 }}
             exit={{ y: '-100%' }}
@@ -46,7 +50,7 @@ const Navbar = () => {
             className="fixed inset-0 z-50 bg-[var(--color-bespoke-bg)] text-[var(--color-bespoke-text)] flex flex-col justify-center px-6 md:px-24"
           >
             <div className="absolute top-6 right-6 md:top-10 md:right-10">
-              <button 
+              <button
                 onClick={() => setIsOpen(false)}
                 className="text-sm tracking-[0.2em] uppercase font-sans hover:italic transition-all duration-300 cursor-pointer"
               >
@@ -64,8 +68,8 @@ const Navbar = () => {
                       animate={{ y: 0 }}
                       transition={{ duration: 0.8, delay: 0.1 * i, ease: [0.76, 0, 0.24, 1] }}
                     >
-                      <Link 
-                        to={path} 
+                      <Link
+                        to={path}
                         className="font-serif text-5xl md:text-8xl hover:text-[var(--color-bespoke-accent)] transition-colors duration-500"
                       >
                         {item}
@@ -75,8 +79,8 @@ const Navbar = () => {
                 );
               })}
             </nav>
-            
-            <motion.div 
+
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 1 }}

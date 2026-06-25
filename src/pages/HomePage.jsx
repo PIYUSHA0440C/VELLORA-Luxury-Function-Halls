@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import PageTransition from '../components/layout/PageTransition';
 import AnimatedText from '../components/ui/AnimatedText';
@@ -9,6 +9,9 @@ import { venues } from '../data/venues';
 
 const HomePage = () => {
   const [activeTab, setActiveTab] = useState(0);
+
+  const { scrollYProgress } = useScroll();
+  const yHero = useTransform(scrollYProgress, [0, 1], [0, 200]);
 
   const venueListItems = venues.map(v => ({
     title: v.name,
@@ -48,21 +51,21 @@ const HomePage = () => {
   return (
     <PageTransition>
       <div className="pb-24">
-        
+
         {/* SECTION 1: HERO */}
         <section className="min-h-[90vh] flex flex-col justify-end pb-24 px-6 md:px-12 max-w-7xl mx-auto pt-40 relative">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
             <div className="lg:col-span-8 z-10">
-              <AnimatedText 
-                text="Luxury" 
-                className="font-serif text-6xl md:text-8xl lg:text-[11rem] leading-[0.85] tracking-tight mb-4" 
+              <AnimatedText
+                text="Luxury"
+                className="font-serif text-6xl md:text-8xl lg:text-[11rem] leading-[0.85] tracking-tight mb-4"
               />
-              <AnimatedText 
-                text="Function Halls." 
-                delay={0.2} 
-                className="font-serif text-5xl md:text-7xl lg:text-[7.5rem] leading-[0.85] tracking-tight italic text-[var(--color-bespoke-accent)] mb-12" 
+              <AnimatedText
+                text="Function Halls."
+                delay={0.2}
+                className="font-serif text-5xl md:text-7xl lg:text-[7.5rem] leading-[0.85] tracking-tight italic text-[var(--color-bespoke-accent)] mb-12"
               />
-              
+
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -81,19 +84,20 @@ const HomePage = () => {
               </motion.div>
             </div>
 
-            <motion.div 
+            <motion.div
               initial={{ clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)' }}
               animate={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)' }}
               transition={{ duration: 1.5, delay: 0.5, ease: premiumEase }}
               className="lg:col-span-4 aspect-[3/4] overflow-hidden"
             >
-              <motion.img 
+              <motion.img
                 initial={{ scale: 1.2 }}
                 animate={{ scale: 1 }}
+                style={{ y: yHero }}
                 transition={{ duration: 2, delay: 0.5, ease: premiumEase }}
-                src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069&auto=format&fit=crop" 
-                alt="Grand Pavilion" 
-                className="w-full h-full object-cover"
+                src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=2098&auto=format&fit=crop"
+                alt="Grand Pavilion Event Hall"
+                className="w-full h-[120%] object-cover absolute top-[-10%]"
               />
             </motion.div>
           </div>
@@ -124,6 +128,38 @@ const HomePage = () => {
           </div>
         </section>
 
+        {/* SECTION 2.5: IMPECCABLE TASTE */}
+        <section className="py-32 px-6 md:px-12 max-w-7xl mx-auto relative">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32 items-center">
+            <motion.div
+              initial={{ clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)' }}
+              whileInView={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)' }}
+              viewport={{ once: false, margin: "-10px" }}
+              transition={{ duration: 1.5, ease: premiumEase }}
+              className="aspect-[4/5] overflow-hidden"
+            >
+              <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2070&auto=format&fit=crop" alt="Fine Dining" className="w-full h-full object-cover" />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, margin: "-10px" }}
+              transition={{ duration: 1, delay: 0.3, ease: premiumEase }}
+            >
+              <AnimatedText text="Impeccable" className="font-serif text-5xl md:text-7xl mb-2" />
+              <AnimatedText text="Taste." delay={0.2} className="font-serif text-5xl md:text-7xl mb-12 italic text-[var(--color-bespoke-accent)]" />
+              <p className="text-lg md:text-xl text-[var(--color-bespoke-text-muted)] leading-relaxed mb-8">
+                Our Michelin-trained culinary team crafts bespoke menus that elevate dining to an art form. Every dish is a masterpiece, designed to complement the elegance of your event.
+              </p>
+              <Magnetic>
+                <Link to="/about" className="inline-block border-b border-[var(--color-bespoke-text)] pb-1 text-sm tracking-[0.2em] uppercase hover:italic transition-all p-4 -m-4">
+                  Discover Our Culinary Arts
+                </Link>
+              </Magnetic>
+            </motion.div>
+          </div>
+        </section>
+
         {/* SECTION 3: THE EXPERIENCE (INTERACTIVE TABS) */}
         <section className="py-32 px-6 md:px-12 max-w-7xl mx-auto">
           <div className="mb-16">
@@ -143,7 +179,7 @@ const HomePage = () => {
                   </h3>
                   <AnimatePresence>
                     {activeTab === i && (
-                      <motion.p 
+                      <motion.p
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
@@ -159,7 +195,7 @@ const HomePage = () => {
 
             <div className="lg:col-span-7 aspect-[4/3] overflow-hidden relative">
               <AnimatePresence mode="wait">
-                <motion.img 
+                <motion.img
                   key={activeTab}
                   initial={{ opacity: 0, scale: 1.05 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -183,7 +219,8 @@ const HomePage = () => {
               </span>
             ))}
           </div>
-          <style dangerouslySetInnerHTML={{__html: `
+          <style dangerouslySetInnerHTML={{
+            __html: `
             @keyframes scroll {
               0% { transform: translateX(0); }
               100% { transform: translateX(-50%); }
@@ -195,8 +232,8 @@ const HomePage = () => {
         <section className="py-32 px-6 md:px-12 max-w-5xl mx-auto text-center flex flex-col items-center">
           <AnimatedText text="Your Vision," className="font-serif text-5xl md:text-8xl mb-2 justify-center" />
           <AnimatedText text="Realized." delay={0.2} className="font-serif text-5xl md:text-8xl mb-16 justify-center" />
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: false, margin: "-10px" }}

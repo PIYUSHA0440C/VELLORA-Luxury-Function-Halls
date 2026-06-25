@@ -55,7 +55,7 @@ const LinkItem = ({ item }) => {
     >
       {/* Mobile Static Image Reveal (Visible only on touch devices) */}
       <div className="md:hidden w-full aspect-[21/9] mb-6 overflow-hidden z-10 pointer-events-none">
-        <img src={item.image} alt={item.title} className="w-full h-full object-cover grayscale" />
+        <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
       </div>
 
       <div className="flex flex-col z-20 pointer-events-none relative mix-blend-difference text-white w-full md:w-auto">
@@ -91,7 +91,7 @@ const LinkItem = ({ item }) => {
         <img 
           src={item.image} 
           alt={item.title} 
-          className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
+          className="w-full h-full object-cover transition-all duration-1000"
         />
       </motion.div>
       

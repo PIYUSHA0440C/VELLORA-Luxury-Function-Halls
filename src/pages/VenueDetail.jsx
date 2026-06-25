@@ -20,7 +20,7 @@ const VenueDetail = () => {
   return (
     <PageTransition>
       <div className="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto">
-        
+
         <div className="mb-16">
           <Magnetic>
             <Link to="/venues" className="text-sm tracking-[0.2em] uppercase hover:italic transition-all text-[var(--color-bespoke-text-muted)] p-4 -m-4 block">
@@ -33,24 +33,24 @@ const VenueDetail = () => {
           <AnimatedText text={venue.name} className="font-serif text-5xl md:text-8xl leading-[0.9]" />
         </div>
 
-        <motion.div 
+        <motion.div
           initial={{ clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)' }}
           animate={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)' }}
           transition={{ duration: 1.5, delay: 0.2, ease: premiumEase }}
           className="aspect-[21/9] overflow-hidden mb-24"
         >
-          <motion.img 
+          <motion.img
             initial={{ scale: 1.1 }}
             animate={{ scale: 1 }}
             transition={{ duration: 2, delay: 0.2, ease: premiumEase }}
-            src={venue.heroImage} 
-            alt={venue.name} 
-            className="w-full h-full object-cover" 
+            src={venue.heroImage}
+            alt={venue.name}
+            className="w-full h-full object-cover"
           />
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-32">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: false, margin: "-10px" }}
@@ -74,8 +74,8 @@ const VenueDetail = () => {
               </ul>
             </div>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, margin: "-10px" }}
@@ -100,7 +100,7 @@ const VenueDetail = () => {
           <h3 className="text-sm tracking-[0.2em] uppercase text-[var(--color-bespoke-text-muted)] mb-12">Gallery</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {venue.gallery.map((img, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 50, clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)' }}
                 whileInView={{ opacity: 1, y: 0, clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)' }}

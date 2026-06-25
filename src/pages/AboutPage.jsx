@@ -15,22 +15,22 @@ const AboutPage = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32 items-start mb-32">
-          <motion.div 
+          <motion.div
             initial={{ clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)' }}
             whileInView={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)' }}
             viewport={{ once: false, margin: "-10px" }}
             transition={{ duration: 1.5, ease: premiumEase }}
             className="aspect-[3/4] overflow-hidden"
           >
-            <motion.img 
+            <motion.img
               initial={{ scale: 1.2 }}
               whileInView={{ scale: 1 }}
               viewport={{ once: false }}
               transition={{ duration: 2, ease: premiumEase }}
-              src="https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=2070&auto=format&fit=crop" alt="Culinary Team" className="w-full h-full object-cover" 
+              src="https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=2070&auto=format&fit=crop" alt="Culinary Team" className="w-full h-full object-cover"
             />
           </motion.div>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, margin: "-10px" }}
@@ -48,7 +48,7 @@ const AboutPage = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32 items-start">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, margin: "-10px" }}
@@ -63,19 +63,19 @@ const AboutPage = () => {
               We handle the complexities so that when the day arrives, you are a guest at your own event.
             </p>
           </motion.div>
-          <motion.div 
+          <motion.div
             initial={{ clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)' }}
             whileInView={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)' }}
             viewport={{ once: false, margin: "-10px" }}
             transition={{ duration: 1.5, ease: premiumEase }}
             className="aspect-square overflow-hidden order-1 md:order-2"
           >
-            <motion.img 
+            <motion.img
               initial={{ scale: 1.2 }}
               whileInView={{ scale: 1 }}
               viewport={{ once: false }}
               transition={{ duration: 2, ease: premiumEase }}
-              src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop" alt="Event Details" className="w-full h-full object-cover" 
+              src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop" alt="Event Details" className="w-full h-full object-cover"
             />
           </motion.div>
         </div>

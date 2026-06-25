@@ -8,9 +8,9 @@ const Footer = () => {
   return (
     <footer className="bg-[var(--color-bespoke-text)] text-[var(--color-bespoke-bg)] py-24 px-6 md:px-12 mt-32 overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-end gap-16">
-        
+
         <div className="max-w-md">
-          <motion.h2 
+          <motion.h2
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: false, margin: "-10px" }}
@@ -31,7 +31,7 @@ const Footer = () => {
           </motion.div>
         </div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: false, margin: "-10px" }}
@@ -49,10 +49,10 @@ const Footer = () => {
             <li><a href="#" className="hover:text-[var(--color-bespoke-bg)] transition-colors">Vogue</a></li>
           </ul>
         </motion.div>
-        
+
       </div>
-      
-      <motion.div 
+
+      <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: false, margin: "-10px" }}
