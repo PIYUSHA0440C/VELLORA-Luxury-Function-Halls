@@ -19,6 +19,15 @@
     color: var(--color-bespoke-text);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  ::-webkit-scrollbar {
+    display: none;
   }
   
   body {
@@ -44,13 +53,3 @@
   text-wrap: balance;
 }
 
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: var(--color-bespoke-bg);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--color-bespoke-border);
-  border-radius: 4px;
-}

@@ -17,7 +17,7 @@ const Navbar = () => {
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-        className="fixed top-0 w-full z-50 mix-blend-difference text-white p-6 md:p-10 flex justify-between items-center pointer-events-none backdrop-blur-md bg-white/5 md:backdrop-blur-none md:bg-transparent"
+        className="fixed top-0 w-full z-50 mix-blend-difference text-white py-4 px-6 md:py-6 md:px-12 flex justify-between items-center pointer-events-none backdrop-blur-md bg-white/5 md:backdrop-blur-none md:bg-transparent"
       >
         <Magnetic>
           <Link

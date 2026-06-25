@@ -50,20 +50,19 @@ const HomePage = () => {
 
   return (
     <PageTransition>
-      <div className="pb-24">
-
+      <div>
         {/* SECTION 1: HERO */}
-        <section className="min-h-[90vh] flex flex-col justify-end pb-24 px-6 md:px-12 max-w-7xl mx-auto pt-40 relative">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
-            <div className="lg:col-span-8 z-10">
+        <section className="min-h-[100svh] 2xl:min-h-[800px] flex flex-col justify-center pt-24 pb-8 px-6 md:px-12 max-w-7xl 2xl:max-w-[2000px] mx-auto relative">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
+            <div className="lg:col-span-8 z-10 pb-4">
               <AnimatedText
                 text="Luxury"
-                className="font-serif text-6xl md:text-8xl lg:text-[11rem] leading-[0.85] tracking-tight mb-4"
+                className="font-serif text-6xl md:text-[6rem] lg:text-[8rem] 2xl:text-[10rem] leading-[0.85] tracking-tight mb-2 md:mb-4"
               />
               <AnimatedText
                 text="Function Halls."
                 delay={0.2}
-                className="font-serif text-5xl md:text-7xl lg:text-[7.5rem] leading-[0.85] tracking-tight italic text-[var(--color-bespoke-accent)] mb-12"
+                className="font-serif text-5xl md:text-[6rem] lg:text-[7rem] 2xl:text-[9.5rem] leading-[0.85] tracking-tight italic text-[var(--color-bespoke-accent)] mb-8 md:mb-12"
               />
 
               <motion.div
@@ -72,12 +71,12 @@ const HomePage = () => {
                 transition={{ duration: 1, delay: 0.8, ease: premiumEase }}
                 className="max-w-md ml-0 lg:ml-24"
               >
-                <h2 className="text-sm tracking-[0.2em] uppercase text-[var(--color-bespoke-text)] mb-4 font-bold">Vidisha's Premier Event Spaces</h2>
-                <p className="text-lg md:text-xl text-[var(--color-bespoke-text-muted)] mb-8 leading-relaxed">
+                <h2 className="text-xs 2xl:text-sm tracking-[0.2em] uppercase text-[var(--color-bespoke-text)] mb-4 2xl:mb-6 font-bold">Vidisha's Premier Event Spaces</h2>
+                <p className="text-base md:text-lg 2xl:text-xl text-[var(--color-bespoke-text-muted)] mb-8 2xl:mb-12 leading-relaxed">
                   Whether you are hosting a grand wedding, a high-profile corporate gala, or an intimate private gathering, our luxury function halls provide the perfect canvas for your milestone events.
                 </p>
                 <Magnetic>
-                  <Link to="/venues" className="inline-block border-b border-[var(--color-bespoke-text)] pb-1 text-sm tracking-[0.2em] uppercase hover:italic transition-all p-4 -m-4">
+                  <Link to="/venues" className="inline-block border-b border-[var(--color-bespoke-text)] pb-1 text-sm 2xl:text-xl tracking-[0.2em] uppercase hover:italic transition-all p-4 -m-4">
                     Explore Venues
                   </Link>
                 </Magnetic>
@@ -88,7 +87,7 @@ const HomePage = () => {
               initial={{ clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)' }}
               animate={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)' }}
               transition={{ duration: 1.5, delay: 0.5, ease: premiumEase }}
-              className="lg:col-span-4 aspect-[3/4] overflow-hidden"
+              className="lg:col-span-4 aspect-[4/5] md:aspect-[3/4] max-h-[60vh] 2xl:max-h-[800px] w-full overflow-hidden relative"
             >
               <motion.img
                 initial={{ scale: 1.2 }}
@@ -104,10 +103,10 @@ const HomePage = () => {
         </section>
 
         {/* SECTION 2: VENUES SHOWCASE GRID */}
-        <section className="py-32 bg-[var(--color-bespoke-surface)]">
-          <div className="px-6 md:px-12 max-w-7xl mx-auto">
-            <div className="flex flex-col md:flex-row justify-between items-end mb-16">
-              <AnimatedText text="The Collection" className="font-serif text-5xl md:text-7xl" />
+        <section className="py-12 md:py-16 2xl:py-32 bg-[var(--color-bespoke-surface)]">
+          <div className="px-6 md:px-12 max-w-7xl 2xl:max-w-[2000px] mx-auto">
+            <div className="flex flex-col md:flex-row justify-between items-end mb-12">
+              <AnimatedText text="The Collection" className="font-serif text-4xl md:text-6xl lg:text-7xl 2xl:text-9xl" />
               <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -129,8 +128,8 @@ const HomePage = () => {
         </section>
 
         {/* SECTION 2.5: IMPECCABLE TASTE */}
-        <section className="py-32 px-6 md:px-12 max-w-7xl mx-auto relative">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32 items-center">
+        <section className="py-12 md:py-16 2xl:py-32 px-6 md:px-12 max-w-7xl 2xl:max-w-[2000px] mx-auto relative">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
             <motion.div
               initial={{ clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)' }}
               whileInView={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)' }}
@@ -146,9 +145,9 @@ const HomePage = () => {
               viewport={{ once: false, margin: "-10px" }}
               transition={{ duration: 1, delay: 0.3, ease: premiumEase }}
             >
-              <AnimatedText text="Impeccable" className="font-serif text-5xl md:text-7xl mb-2" />
-              <AnimatedText text="Taste." delay={0.2} className="font-serif text-5xl md:text-7xl mb-12 italic text-[var(--color-bespoke-accent)]" />
-              <p className="text-lg md:text-xl text-[var(--color-bespoke-text-muted)] leading-relaxed mb-8">
+              <AnimatedText text="Impeccable" className="font-serif text-4xl md:text-6xl lg:text-7xl 2xl:text-9xl mb-2" />
+              <AnimatedText text="Taste." delay={0.2} className="font-serif text-4xl md:text-6xl lg:text-7xl 2xl:text-9xl mb-8 md:mb-12 italic text-[var(--color-bespoke-accent)]" />
+              <p className="text-base md:text-lg 2xl:text-3xl text-[var(--color-bespoke-text-muted)] leading-relaxed mb-8">
                 Our Michelin-trained culinary team crafts bespoke menus that elevate dining to an art form. Every dish is a masterpiece, designed to complement the elegance of your event.
               </p>
               <Magnetic>
@@ -161,9 +160,9 @@ const HomePage = () => {
         </section>
 
         {/* SECTION 3: THE EXPERIENCE (INTERACTIVE TABS) */}
-        <section className="py-32 px-6 md:px-12 max-w-7xl mx-auto">
-          <div className="mb-16">
-            <AnimatedText text="The Experience" className="font-serif text-5xl md:text-7xl" />
+        <section className="py-12 md:py-16 2xl:py-32 px-6 md:px-12 max-w-7xl 2xl:max-w-[2000px] mx-auto">
+          <div className="mb-12 2xl:mb-24">
+            <AnimatedText text="The Experience" className="font-serif text-4xl md:text-6xl lg:text-7xl 2xl:text-9xl" />
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
@@ -174,7 +173,7 @@ const HomePage = () => {
                   onClick={() => setActiveTab(i)}
                   className={`text-left transition-all duration-500 cursor-pointer group ${activeTab === i ? 'opacity-100 pl-4 border-l border-[var(--color-bespoke-text)] -ml-[33px]' : 'opacity-40 hover:opacity-100'}`}
                 >
-                  <h3 className={`font-serif text-3xl mb-4 transition-transform duration-500 ease-out origin-left ${activeTab !== i ? 'group-hover:translate-x-4 group-hover:-skew-x-6' : ''}`}>
+                  <h3 className={`font-serif text-2xl md:text-3xl 2xl:text-5xl mb-4 transition-transform duration-500 ease-out origin-left ${activeTab !== i ? 'group-hover:translate-x-4 group-hover:-skew-x-6' : ''}`}>
                     {tab.title}
                   </h3>
                   <AnimatePresence>
@@ -183,7 +182,7 @@ const HomePage = () => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="text-[var(--color-bespoke-text-muted)] leading-relaxed"
+                        className="text-[var(--color-bespoke-text-muted)] leading-relaxed 2xl:text-2xl"
                       >
                         {tab.content}
                       </motion.p>
@@ -211,10 +210,10 @@ const HomePage = () => {
         </section>
 
         {/* SECTION 4: TESTIMONIALS MARQUEE */}
-        <section className="py-32 bg-[var(--color-bespoke-text)] text-[var(--color-bespoke-bg)] overflow-hidden">
+        <section className="py-12 md:py-16 2xl:py-32 bg-[var(--color-bespoke-text)] text-[var(--color-bespoke-bg)] overflow-hidden">
           <div className="flex space-x-16 whitespace-nowrap px-6 animate-[scroll_40s_linear_infinite]">
             {[...testimonials, ...testimonials, ...testimonials].map((text, i) => (
-              <span key={i} className="font-serif text-4xl md:text-6xl italic">
+              <span key={i} className="font-serif text-3xl md:text-5xl 2xl:text-8xl italic">
                 "{text}" <span className="mx-8 text-[var(--color-bespoke-accent)]">&bull;</span>
               </span>
             ))}
@@ -229,9 +228,9 @@ const HomePage = () => {
         </section>
 
         {/* SECTION 5: GRAND CTA */}
-        <section className="py-32 px-6 md:px-12 max-w-5xl mx-auto text-center flex flex-col items-center">
-          <AnimatedText text="Your Vision," className="font-serif text-5xl md:text-8xl mb-2 justify-center" />
-          <AnimatedText text="Realized." delay={0.2} className="font-serif text-5xl md:text-8xl mb-16 justify-center" />
+        <section className="py-12 md:py-16 2xl:py-32 px-6 md:px-12 max-w-5xl 2xl:max-w-[1800px] mx-auto text-center flex flex-col items-center">
+          <AnimatedText text="Your Vision," className="font-serif text-4xl md:text-6xl lg:text-7xl 2xl:text-[10rem] mb-2 justify-center" />
+          <AnimatedText text="Realized." delay={0.2} className="font-serif text-4xl md:text-6xl lg:text-7xl 2xl:text-[10rem] mb-12 justify-center" />
 
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}

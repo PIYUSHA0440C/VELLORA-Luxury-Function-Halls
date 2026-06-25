@@ -11,7 +11,7 @@ const VenuesPage = () => {
 
   return (
     <PageTransition>
-      <div className="pt-40 pb-24 px-6 md:px-12 max-w-7xl mx-auto">
+      <div className="pt-40 pb-24 px-6 md:px-12 max-w-7xl 2xl:max-w-[2000px] mx-auto">
 
         <div className="mb-24">
           <AnimatedText text="Our" className="font-serif text-5xl md:text-8xl" />
